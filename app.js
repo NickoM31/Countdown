@@ -15,7 +15,6 @@ function decompte(){
 },1000);
 };
 $("button").click(function(){
-	
 	clearInterval(pause);
 });
 decompte();

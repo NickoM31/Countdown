@@ -1,56 +1,23 @@
+var temps = 60;
+var pause;
 
-var timer = 90;
-var stop;
+function decompte(){
+	pause = setInterval(function(){
+		temps--;
+		var minutes = parseInt(temps / 60,10);
+		var secondes = temps - minutes*60;
+		$("#minutes").text(minutes);
+		$("#secondes").text(secondes);
+		
+		if(temps <= 0){
+			clearInterval(pause);
+		}
+	},1000);
+};
 
+$("button").click(function(){
+	
+	clearInterval(pause);
 
-function secondes(){
-stop = setInterval(function(){
-	$(".secondes").text(timer--);
-	if(timer<0){
-		clearInterval(stop);
-	}
-},1000);
-
-
-}
-
-function minutes(){
-stop = setInterval(function(){
-	$(".minutes").text(timer--);
-	if(timer<0){
-		clearInterval(stop);
-	}
-},1000);
-
-
-}
-
-function heures(){
-stop = setInterval(function(){
-	$(".heures").text(timer--);
-	if(timer<0){
-		clearInterval(stop);
-	}
-},1000);
-
-
-}
-
-
-
-/*$("h2").text(heures()+":"+minutes()+":"+secondes());*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+});
+decompte();

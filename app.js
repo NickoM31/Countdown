@@ -9,10 +9,10 @@ function decompte(){
 		$("#minutes").text(minutes);
 		$("#secondes").text(secondes);
 
-	if(temps <= 0){
-		clearInterval(pause);
-	}
-},1000);
+		if(temps <= 0){
+			clearInterval(pause);
+		}
+	},1000);
 };
 $("button").click(function(){
 	clearInterval(pause);

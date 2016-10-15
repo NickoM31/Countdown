@@ -1,4 +1,4 @@
-var temps = 60;
+var temps = 240;
 var pause;
 
 function decompte(){
@@ -8,16 +8,14 @@ function decompte(){
 		var secondes = temps - minutes*60;
 		$("#minutes").text(minutes);
 		$("#secondes").text(secondes);
-		
-		if(temps <= 0){
-			clearInterval(pause);
-		}
-	},1000);
-};
 
+	if(temps <= 0){
+		clearInterval(pause);
+	}
+},1000);
+};
 $("button").click(function(){
 	
 	clearInterval(pause);
-
 });
 decompte();

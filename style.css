@@ -1,10 +1,8 @@
-h1{
-	color: orange;
-	text-align: center;
+.nbre{
+font-size: 200px;
+text-align: center;
 }
-div{
-	text-align: center;
-}
-button{
+
+.boutons{
 	text-align: center;
 }

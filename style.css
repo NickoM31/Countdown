@@ -1,6 +1,11 @@
-div{
-font-size: 200px;
+.nbr{
+font-size: 150px;
 text-align: center;
+}
+
+div{
+	text-align: center;
+	
 }
 
 .boutons{

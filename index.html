@@ -6,23 +6,29 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<div><span id="minutes"></span> : <span id="secondes"></span>
+	<div class=nbr><span id="minutes"></span> : <span id="secondes"></span>
 	</div>
 
-	<input id="input" type="" name="">
-		<button id="butval">entrer temps</button>
+	<div>
+		<input id="inputmin" placeholder="minutes" type="" name="">
 	</div>
-
-	
+	<div><input id="inputsec" placeholder="secondes" type="" name="">
+	</div>
 
 	<div class="boutons">
-		<button id="start" data= "butt">START</button>
-		<button id="pause" data= "butt">PAUSE</button>
-		<button id="reset" data= "butt">RESET</button>
-	</div>
+	<button id="butval">Done</button>
+</div>
 
 
-	<script src="node_modules/jquery/dist/jquery.js"></script>
-	<script src="app.js"></script>
+
+<div class="boutons">
+	<button id="start" data= "butt">START</button>
+	<button id="pause" data= "butt">PAUSE</button>
+	<button id="reset" data= "butt">RESET</button>
+</div>
+
+
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

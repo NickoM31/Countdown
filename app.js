@@ -13,8 +13,8 @@
 			$("#start").on('click', this.start.bind(this));
 			$("#pause").on('click', this.pause.bind(this));
 			$("#reset").on('click', this.reset.bind(this));
-			
-			
+			$("#butval").on('click', this.done.bind(this));
+
 		},
 		start : function(){
 			clearInterval(this.intervalID);
@@ -27,31 +27,45 @@
 
 		},
 		reset : function(){
-
-			this.timer = 60;
+			this.init();
 		},
 		decrement : function(){
 			this.timer--;
+			console.log(this.timer);
 			this.updateView();
 			if(this.timer <= 0){
 				clearInterval(this.intervalID);
+
 			}
 		},
-		updateView : function(){
-			var minutes = parseInt(this.timer / 60, 10);
-			var secondes = this.timer % 60;
-			var input = $("#min").val();
-			
-			$("#minutes").html(minutes);
-			$("#secondes").html(secondes);
-			
+		done : function(){
+			var min = parseInt($("#inputmin").val(),10);
+			var sec = parseInt($("#inputsec").val(),10);
+			$("#minutes").html(min);
+			$("#secondes").html(sec);
+			this.timer = min*60 + sec;
 
 		},
+		updateView : function(){
+			
+			var min= parseInt(this.timer / 60, 10);
+			var sec= this.timer % 60;
+			$("#minutes").html(min);
+			$("#secondes").html(sec);
+
+			if(min < 10){
+				$("#minutes").html("0" + min);
+			}
+
+			if(sec < 10){
+				$("#secondes").html("0" + sec);
+			}
+
+
+		},
+
 
 	};
 	app.init();
 })();
-			/*if (minutes <10 && secondes <10){
-				$("#nbre").html("0" + minutes + ":" + "0" + secondes);
 
-			}*/

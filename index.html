@@ -2,33 +2,34 @@
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
-	<title>Sablier</title>
+	<title>CountDown</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<div class=nbr><span id="minutes"></span> : <span id="secondes"></span>
+	<div class= contour>
+
+		<div class=nbr><span id="minutes"></span> : <span id="secondes"></span>
+		</div>
+
+		<div>
+			<input id="inputmin" placeholder="minutes" type="" name="">
+		</div>
+		<div><input id="inputsec" placeholder="secondes" type="" name="">
+		</div>
+
+		<div class="boutons">
+			<button id="butval">Done</button>
+		</div>
+		<div class="boutons">
+			<button id="start" data= "butt">START</button>
+			<button id="pause" data= "butt">PAUSE</button>
+			<button id="reset" data= "butt">RESET</button>
+		</div>
 	</div>
-
-	<div>
-		<input id="inputmin" placeholder="minutes" type="" name="">
-	</div>
-	<div><input id="inputsec" placeholder="secondes" type="" name="">
-	</div>
-
-	<div class="boutons">
-	<button id="butval">Done</button>
-</div>
+	
 
 
-
-<div class="boutons">
-	<button id="start" data= "butt">START</button>
-	<button id="pause" data= "butt">PAUSE</button>
-	<button id="reset" data= "butt">RESET</button>
-</div>
-
-
-<script src="node_modules/jquery/dist/jquery.js"></script>
-<script src="app.js"></script>
+	<script src="node_modules/jquery/dist/jquery.js"></script>
+	<script src="app.js"></script>
 </body>
 </html>

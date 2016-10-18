@@ -3,43 +3,44 @@
 
 (function(){
 	var app = {
-		time : 60,
+		timer : null,
 		intervalID : null,
 		init : function(){
-			app.listeners();
+			this.listeners();
+			
 		},
 		listeners : function(){
-			$("#start").on('click', app.start);
-			$("#pause").on('click', app.pause);
-			$("#reset").on('click', app.reset);
-			$("#butval").on('click',app.inputTemps);
+			$("#start").on('click', this.start.bind(this));
+			$("#pause").on('click', this.pause.bind(this));
+			$("#reset").on('click', this.reset.bind(this));
+			
 			
 		},
 		start : function(){
-			clearInterval(app.intervalID);
-			app.intervalID = setInterval(app.decrement, 
+			clearInterval(this.intervalID);
+			this.intervalID = setInterval(this.decrement.bind(this), 
 				1000);
 			
 		},
 		pause : function(){
-			clearInterval(app.intervalID);
+			clearInterval(this.intervalID);
 
 		},
 		reset : function(){
 
-			app.time = 60;
+			this.timer = 60;
 		},
 		decrement : function(){
-			app.time--;
-			app.vueSablier();
-			if(app.time <= 0){
-				clearInterval(app.intervalID);
+			this.timer--;
+			this.updateView();
+			if(this.timer <= 0){
+				clearInterval(this.intervalID);
 			}
 		},
-		vueSablier : function(){
-			var minutes = parseInt(app.time / 60, 10);
-			var secondes = app.time % 60;
-			var inputMin = $("#min").val();
+		updateView : function(){
+			var minutes = parseInt(this.timer / 60, 10);
+			var secondes = this.timer % 60;
+			var input = $("#min").val();
 			
 			$("#minutes").html(minutes);
 			$("#secondes").html(secondes);

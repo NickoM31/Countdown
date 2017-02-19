@@ -49,8 +49,6 @@
 		},
 		reset : function(){
 			this.done();
-			console.log("braaapp");
-			
 		},
 		updateView : function(){
 
